@@ -1,56 +1,76 @@
 import React, { useState } from 'react'
+import { Controller, useForm } from 'react-hook-form';
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
 
 export const Login = () => {
 
     const [openEye, setOpenEye] = useState(false)
-    const [inputValue, setInputValue] = useState({
-        user: '',
-        password: ''
-    })
 
-    const handleRegister = (e) => {
-        e.preventDefault();
-        if (inputValue.user === '' || inputValue.password === '') {
-            alert('Заполните все поля')
-        } 
-         else {
-            console.log(inputValue);
-            alert('Вы вошли в аккаунт')
-            setInputValue({
-                user: '',
-                password: ''
-            })
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+        reset,
+        control,
+    } = useForm({
+        mode: 'onBlur',
+        defaultValues: {
+            user: '',
+            password: ''
         }
+    });
+
+    const onSubmit = (data) => {
+        console.log(data, 'login');
+        reset();
     }
 
     return (
         <div className="login">
             <div className='form'>
                 <b>Авторизоваться</b>
-                <form action="">
+                <form action="" onSubmit={handleSubmit(onSubmit)}>
                     <div className='formInput'>
-                        <div className='input'>
-                            <input type="text" placeholder='Введите ваше имя'
-                                onChange={(e) => setInputValue({ ...inputValue, user: e.target.value })}
-                                value={inputValue.user}
-                            />
+                        <div>
+                            <div className='input'>
+                                <input type="text" placeholder='Введите ваше имя'
+                                    {...register('loginUser', {
+                                        required: true
+                                    })}
+                                />
+                            </div>
+                            <div className='error'>
+                                {errors?.loginUser && <p>Поле обязательно к заполнению</p>}
+                            </div>
                         </div>
-                        <div className='input'>
-                            <input type={openEye ? "text" : "password"}
-                                placeholder='Введите пароль'
-                                onChange={(e) => setInputValue({ ...inputValue, password: e.target.value })}
-                                value={inputValue.password}
+                        <div>
+                            <Controller
+                                name='loginPassword'
+                                control={control}
+                                render={({ field }) => (
+                                    <div className='input'>
+                                        <input type={openEye ? "text" : "password"}
+                                            {...field}
+                                            placeholder='Введите пароль'
+                                        />
+                                        <div className='eye' onClick={() => setOpenEye(!openEye)}>
+                                            {
+                                                openEye ? <IoMdEye /> : <IoMdEyeOff />
+                                            }
+                                        </div>
+                                    </div>
+                                )}
+                                rules={{
+                                    required: 'Поле обязательно к заполнению',
+                                }}
                             />
-                            <div className='eye' onClick={() => setOpenEye(!openEye)}>
-                                {
-                                    openEye ? <IoMdEye /> : <IoMdEyeOff /> 
-                                }
+                            <div className='error'>
+                                {errors?.loginPassword && <p>{errors?.loginPassword?.message}</p>}
                             </div>
                         </div>
                         <a href="">Забыли пароль?</a>
-                        <button onClick={handleRegister}>Войти</button>
+                        <button>Войти</button>
                     </div>
                     <div className='text'>
                         <p>У вас нет учетной записи?</p>

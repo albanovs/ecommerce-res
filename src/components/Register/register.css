@@ -45,6 +45,10 @@ input {
     padding: 15px;
 }
 
+.error p {
+    color: red;
+}
+
 .eye {
     display: grid;
     justify-content: end;
