@@ -1,0 +1,9 @@
+.slide {
+    width: 300px;
+    height: 400px;
+    background-color: aqua;
+}
+.slick-next:before, .slick-prev:before {
+    color: rgb(0, 255, 234) !important;
+}
+

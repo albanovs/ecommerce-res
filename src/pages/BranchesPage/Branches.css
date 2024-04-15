@@ -1,0 +1,50 @@
+.mainBraches {
+    display: flex;
+    justify-content: center;
+}
+.branches {
+    display: flex;
+    margin: 50px auto;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.branch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 270px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+.infoBranch { 
+    display: flex;
+    flex-direction: column;
+    p {
+        font-size: 20px;
+        color: white;
+
+    }
+    button {
+        height: 40px;
+        font-size: 18px;
+        border-radius: 25px;
+        background-color: #d5bba2;
+        border: none;
+    }
+}
+.branch img {
+    max-width: 100%;
+    max-height: 100%; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+     /* Задаем полупрозрачный черный цвет */
+
+}

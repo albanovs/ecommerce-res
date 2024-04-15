@@ -1,0 +1,124 @@
+.mainContact {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+} 
+
+.adressContacts {
+    display: flex;
+    justify-content: center;
+}
+.details {
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+
+}
+
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    p, span {
+        font-size: 20px;
+
+    }
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .group {
+    position: relative;
+  }
+  
+  .formEmail .group label {
+    font-size: 14px;
+    color: rgb(99, 102, 102);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #fff;
+    transition: all .3s ease;
+  }
+  
+  .formEmail .group input,
+  .formEmail .group textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    outline: 0;
+    width: 100%;
+    background-color: transparent;
+  }
+  
+  .formEmail .group input:placeholder-shown+ label, .formEmail .group textarea:placeholder-shown +label {
+    top: 10px;
+    background-color: transparent;
+  }
+  
+  .formEmail .group input:focus,
+  .formEmail .group textarea:focus {
+    border-color: #3366cc;
+  }
+  
+  .formEmail .group input:focus+ label, .formEmail .group textarea:focus +label {
+    top: -10px;
+    left: 10px;
+    background-color: #fff;
+    color: #3366cc;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .formEmail .group textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  .formEmail button {
+    background-color: #3366cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .formEmail button:hover {
+    background-color: #27408b;
+  }
+  
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

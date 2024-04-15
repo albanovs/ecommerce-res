@@ -1,0 +1,68 @@
+.mainBrach {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+}
+.slider {
+    height: 500px;
+    max-width: 1000px;
+}
+
+.detailInfo {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+    font-size: 24px;
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.infoBranch {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bron {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: inherit;
+    font-size: 17px;
+    padding: 0.6em 1.5em;
+    font-size: 24px;
+    a {
+        width: 100px;
+        text-decoration: none;
+        color: #fff;
+
+    }
+   }
+   
+   .bron:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+   }
+   
+   @keyframes pulse512 {
+    0% {
+     box-shadow: 0 0 0 0 #05bada66;
+    }
+   
+    70% {
+     box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+   
+    100% {
+     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+   }

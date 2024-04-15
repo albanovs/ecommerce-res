@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form';
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Navigate } from 'react-router-dom'; 
+
 
 export const Login = () => {
 
     const [openEye, setOpenEye] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false) 
 
     const {
         register,
@@ -23,7 +25,16 @@ export const Login = () => {
 
     const onSubmit = (data) => {
         console.log(data, 'login');
+        if (data.loginUser === '123' && data.loginPassword === '123') {
+            setIsLoggedIn(true); // устанавливаем isLoggedIn в true, если логин и пароль верны
+        } else {
+            alert('Неверный логин или пароль');
+        }
         reset();
+    }
+
+    if (isLoggedIn) {
+        return <Navigate to="/private-office" replace />; 
     }
 
     return (

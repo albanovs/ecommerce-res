@@ -1,0 +1,28 @@
+.mainDish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+  }
+  
+  .dishImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .dishTitle {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .dishPrice {
+    color: #888;
+    font-size: 16px;
+  }
+  

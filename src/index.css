@@ -9,3 +9,7 @@ body {
     margin: 0 auto;
     padding: 30px;
 }
+
+.App {
+    height: 100vh;
+}
