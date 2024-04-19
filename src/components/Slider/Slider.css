@@ -4,6 +4,6 @@
     background-color: aqua;
 }
 .slick-next:before, .slick-prev:before {
-    color: rgb(0, 255, 234) !important;
+    color: rgb(102, 107, 107) !important;
 }
 

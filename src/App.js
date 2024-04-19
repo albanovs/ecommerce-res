@@ -6,6 +6,7 @@ import Branches from './pages/BranchesPage/Branches';
 import Branch from './pages/BranchPage/Branch';
 import ContactPage from './pages/ContactPage/ContactPage';
 import MenuPage from './pages/MenuPage/MenuPage';
+import MainPage from './pages/MainPage/MainPage';
 
 function App() {
 
@@ -13,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <Header/>
-
     <Routes>
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
@@ -21,6 +21,8 @@ function App() {
       <Route path="/branches/:id" element={<Branch />} />
       <Route path="/contacts" element={<ContactPage />} />
       <Route path="/menu" element={<MenuPage />} />
+      <Route path="/ru" element={<MainPage />} />
+
     </Routes>
     </div>
   );

@@ -35,7 +35,7 @@ function Register() {
         <div className='register'>
             <div className='form'>
                 <b>Зарегистрироваться</b>
-                <form action="" onSubmit={handleSubmit(onSubmit)}>
+                <form className='formForm' action="" onSubmit={handleSubmit(onSubmit)}>
                     <div className='formInput'>
                         <div>
                             <div className='input'>

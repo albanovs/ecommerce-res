@@ -1,0 +1,45 @@
+.mainPage {
+    height: calc(100vh - 110px); /* Замените 70px на высоту вашего хедера */
+    width: 100%; 
+}
+
+
+.slideMain {
+    width: 1000px;
+    height: calc(100vh - 110px);    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.slideText {
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    left: 40%
+}
+.mainText {
+    font-size: 38px;
+    color: #ffff;
+    font-weight: 400;
+} 
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: calc(100vh - 110px);   
+}
+
+@media (max-width: 320px){
+    .slideText {
+        left: 15%;
+    }
+}
+@media (max-width: 426px){
+    .slideText {
+        left: 20%;
+    }
+}
+
+
