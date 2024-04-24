@@ -1,14 +1,13 @@
 import React from "react";
-import "./DishCard.css";
+import styles from './DishCard.module.scss';
 
-function DishCard({ image, title, price }) {
+export function DishCard({ image, title, price }) {
   return (
-    <div className="mainDish">
-      <img src={image} alt={title} className="dishImage" />
-      <h2 className="dishTitle">{title}</h2>
-      <p className="dishPrice">{price}</p>
+    <div className={styles.mainDish}>
+      <img src={image} alt={title} className={styles.dishImage} />
+      <h2 className={styles.dishTitle}>{title}</h2>
+      <p className={styles.dishPrice}>{price}</p>
     </div>
-  );
-}
+);
 
-export default DishCard;
+}

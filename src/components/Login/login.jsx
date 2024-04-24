@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form';
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 import { NavLink, Navigate } from 'react-router-dom'; 
+import styles from '../Register/register.module.scss'
 
 
 export const Login = () => {
@@ -38,20 +39,20 @@ export const Login = () => {
     }
 
     return (
-        <div className="login">
-            <div className='form'>
+        <div className={styles.login}>
+            <div className={styles.form}>
                 <b>Авторизоваться</b>
                 <form action="" onSubmit={handleSubmit(onSubmit)}>
-                    <div className='formInput'>
+                    <div className={styles.formInput}>
                         <div>
-                            <div className='input'>
+                            <div className={styles.input}>
                                 <input type="text" placeholder='Введите ваше имя'
                                     {...register('loginUser', {
                                         required: true
                                     })}
                                 />
                             </div>
-                            <div className='error'>
+                            <div className={styles.error}>
                                 {errors?.loginUser && <p>Поле обязательно к заполнению</p>}
                             </div>
                         </div>
@@ -60,12 +61,12 @@ export const Login = () => {
                                 name='loginPassword'
                                 control={control}
                                 render={({ field }) => (
-                                    <div className='input'>
+                                    <div className={styles.input}>
                                         <input type={openEye ? "text" : "password"}
                                             {...field}
                                             placeholder='Введите пароль'
                                         />
-                                        <div className='eye' onClick={() => setOpenEye(!openEye)}>
+                                        <div className={styles.eye} onClick={() => setOpenEye(!openEye)}>
                                             {
                                                 openEye ? <IoMdEye /> : <IoMdEyeOff />
                                             }
@@ -76,19 +77,20 @@ export const Login = () => {
                                     required: 'Поле обязательно к заполнению',
                                 }}
                             />
-                            <div className='error'>
+                            <div className={styles.error}>
                                 {errors?.loginPassword && <p>{errors?.loginPassword?.message}</p>}
                             </div>
                         </div>
                         <a href="">Забыли пароль?</a>
                         <button>Войти</button>
                     </div>
-                    <div className='text'>
+                    <div className={styles.text}>
                         <p>У вас нет учетной записи?</p>
                         <NavLink to="/register">Создайте</NavLink>
                     </div>
                 </form>
             </div>
         </div>
-    )
+    );
+    
 }

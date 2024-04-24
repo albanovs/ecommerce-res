@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import './register.css'
+import styles from './register.module.scss'
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
 import { Controller, useForm } from 'react-hook-form'
 
-function Register() {
+export function Register() {
 
     const [openEye1, setOpenEye1] = useState(false)
     const [openEye2, setOpenEye2] = useState(false)
@@ -32,32 +32,32 @@ function Register() {
     }
 
     return (
-        <div className='register'>
-            <div className='form'>
+        <div className={styles.register}>
+            <div className={styles.form}>
                 <b>Зарегистрироваться</b>
-                <form className='formForm' action="" onSubmit={handleSubmit(onSubmit)}>
-                    <div className='formInput'>
+                <form className={styles.formForm} action="" onSubmit={handleSubmit(onSubmit)}>
+                    <div className={styles.formInput}>
                         <div>
-                            <div className='input'>
+                            <div className={styles.input}>
                                 <input type="text" placeholder='Введите ваше имя'
                                     {...register('user', {
                                         required: true
                                     })}
                                 />
                             </div>
-                            <div className='error'>
+                            <div className={styles.error}>
                                 {errors?.user && <p>Поле обязательно к заполнению</p>}
                             </div>
                         </div>
                         <div>
-                            <div className='input'>
+                            <div className={styles.input}>
                                 <input type="email" placeholder='Введите электронную почту'
                                     {...register('email', {
                                         required: true
                                     })}
                                 />
                             </div>
-                            <div className='error'>
+                            <div className={styles.error}>
                                 {errors?.email && <p>Поле обязательно к заполнению</p>}
                             </div>
                         </div>
@@ -66,12 +66,12 @@ function Register() {
                                 name='password'
                                 control={control}
                                 render={({ field }) => (
-                                    <div className='input'>
+                                    <div className={styles.input}>
                                         <input type={openEye1 ? "text" : "password"}
                                             {...field}
                                             placeholder='Введите пароль'
                                         />
-                                        <div className='eye' onClick={() => setOpenEye1(!openEye1)}>
+                                        <div className={styles.eye} onClick={() => setOpenEye1(!openEye1)}>
                                             {
                                                 openEye1 ? <IoMdEye /> : <IoMdEyeOff />
                                             }
@@ -86,7 +86,7 @@ function Register() {
                                     }
                                 }}
                             />
-                            <div className='error'>
+                            <div className={styles.error}>
                                 {errors?.password && <p>{errors?.password?.message}</p>}
                             </div>
                         </div>
@@ -95,12 +95,12 @@ function Register() {
                                 name='confirmPassword'
                                 control={control}
                                 render={({ field }) => (
-                                    <div className='input'>
+                                    <div className={styles.input}>
                                         <input type={openEye2 ? "text" : "password"}
                                             {...field}
                                             placeholder='Повторно введите пароль'
                                         />
-                                        <div className='eye' onClick={() => setOpenEye2(!openEye2)}>
+                                        <div className={styles.eye} onClick={() => setOpenEye2(!openEye2)}>
                                             {
                                                 openEye2 ? <IoMdEye /> : <IoMdEyeOff />
                                             }
@@ -116,14 +116,14 @@ function Register() {
                                     validate: (value) => value === watch('password') || 'Пароли не совпадают'
                                 }}
                             />
-                            <div className='error'>
+                            <div className={styles.error}>
                                 {errors?.confirmPassword && <p>{errors?.confirmPassword?.message}</p>}
                             </div>
                         </div>
                         <a href="">Забыли пароль?</a>
                         <button>Зарегистрироваться</button>
                     </div>
-                    <div className='text'>
+                    <div className={styles.text}>
                         <p>У вас уже есть аккаунт?</p>
                         <NavLink to="/login" >Войдите</NavLink>
                     </div>
@@ -131,6 +131,6 @@ function Register() {
             </div>
         </div>
     )
+    
 }
 
-export default Register

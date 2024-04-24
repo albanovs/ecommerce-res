@@ -1,5 +1,5 @@
 import React from "react";
-import "./Branches.css";
+import styles from "./Branches.module.scss";
 import Fhoto from "../../img/Screenshot_20200831-201700_Instagram.jpg";
 import { Link } from "react-router-dom";
 
@@ -13,23 +13,23 @@ const branches = [
   // Добавьте больше веток по мере необходимости
 ];
 
-function Branches() {
+export function Branches() {
   return (
-    <div className="mainBraches">
-      <div className="branches">
+    <div className={styles.mainBraches}>
+      <div className={styles.branches}>
         {branches.map(branch => (
           <Link to={`/branches/${branch.id}`} key={branch.id}>
-            <div className="branch">
-              <div className="infoBranch">
+            <div className={styles.branch}>
+              <div className={styles.infoBranch}>
                 <img src={Fhoto} alt="photo" />
-                <p>{branch.address}</p> <button>Посмотреть</button>
+                <p>{branch.address}</p>
+                <button>Посмотреть</button>
               </div>
             </div>
           </Link>
         ))}
       </div>
     </div>
-  );
-}
+);
 
-export default Branches;
+}
